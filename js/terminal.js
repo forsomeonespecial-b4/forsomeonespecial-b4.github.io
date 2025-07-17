@@ -283,7 +283,7 @@ function processInput(input) {
             window.matrixEffect.stopMatrix();
         }, 2000);
     } else {
-        printToTerminal(`Unknown command: ${input}`);
+        printToTerminal(`Wrong command: ${input}`);
     }
 }
 
