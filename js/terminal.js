@@ -222,7 +222,7 @@ function processInput(input) {
         window.location.href = "level2.html";
     } else if (input === "slash complete@Basma") {
         window.location.href = "completed.html";
-    } else if (input.startsWith('curl ')) {
+    } else if (input.startsWith('download ')) {
         const parts = input.split(' ');
         const url = parts[1];
         const output = parts[3];
@@ -237,7 +237,7 @@ function processInput(input) {
             };
             printToTerminal('File downloaded: secret.txt');
         } else {
-            printToTerminal('curl: failed to download file');
+            printToTerminal('download: failed to download file');
         }
 
     } else if (input.startsWith("run ")) {
@@ -562,7 +562,7 @@ function terminalHelp() {
         list                  &gt; Lists files and folders in current directory
         go (folder)             &gt; Goes to directory
         read  (file)          &gt; Views contents of a file
-        curl -o -url -file  &gt; Downloads a file from a URL
+        download -o -url -file  &gt; Downloads a file from a URL
         pwd                 &gt; Prints current directory
         whoami              &gt; Prints current user
         decrypt             &gt; Decrypt a file using a key
