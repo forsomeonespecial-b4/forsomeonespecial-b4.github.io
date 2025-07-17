@@ -24,7 +24,8 @@ body {
 
 .game-desktop {
     background: 
-        url('../media/Background.png') no-repeat center center fixed,
+ url('/media/Background.png') no-repeat center center fixed, #111;
+
         #111;
     background-size: cover;
     
