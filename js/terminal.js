@@ -153,9 +153,9 @@ function processInput(input) {
     } else if (input === "clear") {
         clear();
         return;
-    } else if (input === 'ls') {
+    } else if (input === 'list') {
         lsCommand();
-    } else if (input.startsWith('cd ')) {
+    } else if (input.startsWith('go ')) {
         const arg = input.split(' ')[1];
         cdCommand(arg);
     } else if (input.startsWith('ping')) {
@@ -169,7 +169,7 @@ function processInput(input) {
         mkdirCommand(arg);
     } else if (input.startsWith('echo ')) {
         echoCommand(input);
-    } else if (input.startsWith('cat ')) {
+    } else if (input.startsWith('read ')) {
         const arg = input.split(' ')[1];
         catCommand(arg);
     } else if (input.startsWith('su')) {
@@ -494,9 +494,9 @@ function catCommand(fileName) {
     if (file && file.type === 'file') {
         printToTerminal(file.content || '');
     } else if (file && file.type === 'directory') {
-        printToTerminal(`cat: ${fileName}: Is a directory`);
+        printToTerminal(`read: ${fileName}: Is a directory`);
     } else {
-        printToTerminal(`cat: ${fileName}: No such file`);
+        printToTerminal(`read: ${fileName}: No such file`);
     }
 }
 
@@ -559,9 +559,9 @@ function terminalHelp() {
     printToTerminal(`--- HELP ---
         help                &gt; Shows a list of possible commands
         clear               &gt; Clears the terminal
-        ls                  &gt; Lists files and folders in current directory
-        cd (folder)             &gt; Goes to directory
-        cat  (file)          &gt; Views contents of a file
+        list                  &gt; Lists files and folders in current directory
+        go (folder)             &gt; Goes to directory
+        read  (file)          &gt; Views contents of a file
         curl -o -url -file  &gt; Downloads a file from a URL
         pwd                 &gt; Prints current directory
         whoami              &gt; Prints current user
@@ -601,7 +601,7 @@ function cdCommand(dirName) {
     if (dir.contents[dirName] && dir.contents[dirName].type === 'directory') {
         currentPath.push(dirName);
     } else {
-        printToTerminal(`cd: no such directory: ${dirName}`);
+        printToTerminal(`go: no such directory: ${dirName}`);
     }
 }
 
