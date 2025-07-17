@@ -169,7 +169,7 @@ printToTerminal('File downloaded: fixmy.pc\nRun in the terminal: editor fix_pc.s
           <h3>🧾 Secure File Access</h3>
           <p>Access granted. 1 new file for b4soum.</p>
           <p>To download the file, use the following command in your terminal:</p>
-          <code>curl b4soum.site/secret.txt -o secret.txt</code>
+          <code>download b4soum.site/secret.txt -o secret.txt</code>
           <br><br>
           <a href="intranet.local" class="fake-link">Back to intranet</a>
         `;
